@@ -115,3 +115,43 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+/**
+ * Social Menus
+ */
+add_action( 'init', 'my_register_nav_menus' );
+
+function my_register_nav_menus() {
+
+	register_nav_menu( 'social', __( 'Social', 'showcase-series' ) );
+
+}
+
+
+
+
+/**
+ * Customize footer
+ */
+function custom_footer_left() {
+
+	get_template_part( 'menu', 'social' );
+
+} // End of careers_credits()
+add_action( 'footer_left', 'custom_footer_left' );
+
+function custom_site_info() {
+
+	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></div>', 'showcase-series' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+
+} // End of careers_credits()
+add_action( 'site_info', 'custom_site_info' );
+
+function slushman_credits() {
+
+	printf( __( '<a href="http://%1$s.com" class="%1$s" rel="designer" >%2$s</a>', 'showcase-series' ), 'slushman', 'Slushman' );
+
+} // End of careers_credits()
+add_action( 'site_credits', 'slushman_credits' );

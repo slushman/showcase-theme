@@ -1,0 +1,20 @@
+.slushman {
+	font-family: "GuildofProfessionalActorsRegu", Helvetica, sans-serif;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
+.slushman-header {
+	font-size: 2em;
+	font-family: "GuildofProfessionalActorsRegu", Helvetica, sans-serif;
+	text-decoration: none;
+	color: $light;
+}
+
+@font-face {
+	font-family: 'GuildofProfessionalActorsRegu';
+	src: url('fonts/guildof-webfont.eot');
+	src: local('?'), url('fonts/guildof-webfont.woff') format('woff'), url('fonts/guildof-webfont.ttf') format('truetype'), url('fonts/guildof-webfont.svg#webfont24mxKR7b') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

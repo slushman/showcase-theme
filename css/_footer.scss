@@ -1,0 +1,57 @@
+// Footer
+// --------------------------
+
+.site-footer {
+	position: absolute;
+	color: $light;
+	width: 100%;
+	bottom: 0;
+
+	a {
+		color: $light;
+	}
+
+	.footer-wrap {
+		max-width: $finalwidth;
+		margin: auto;
+		padding: 0 1em;
+
+		@media all and (min-width: $responsive1) {
+			@include flexbox();
+			@include justify( space-around );
+			@include flexflow( row nowrap );
+		}
+
+		.footer_block {
+			display: block;
+			width: 100%;
+			margin-bottom: 1.5em;
+			line-height: 2em;
+			text-align: center;
+
+			@media all and (min-width: $responsive1) {
+				width: 33%;
+				margin-bottom: 0;
+			}
+		 }
+
+		.footer_left {
+
+			.nav-social {
+		
+				.menu-items {
+					margin: 0;
+
+					.menu-item {
+
+						a:before {
+							color: $light;
+						}
+
+					}
+
+				}
+			}
+		}
+	}
+}

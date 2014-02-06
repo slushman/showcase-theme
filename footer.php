@@ -11,12 +11,27 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'showcase_series_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'showcase-series' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'showcase-series' ), 'CEMB Showcase Series', '<a href="http://slushman.com" rel="designer">Slushman</a>' ); ?>
-		</div><!-- .site-info -->
+
+		<div class="footer-wrap">
+
+			<div class="footer_left footer_block"><?php
+
+				do_action( 'footer_left' );
+
+			?></div><!-- .footer_left -->
+			<div class="site-info footer_block"><?php
+
+				do_action( 'site_info' );
+
+			?></div><!-- .site-info -->
+			<div class="site-credits footer_block"><?php
+
+				do_action( 'site_credits' );
+
+			?></div><!-- .site-credits -->
+		
+		</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

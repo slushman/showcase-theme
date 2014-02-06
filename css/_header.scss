@@ -1,0 +1,66 @@
+/* =Header
+----------------------------------------------- */
+
+.site-header {
+	margin-bottom: $vspacing;
+
+	@media all and (min-width: $responsive1) {
+		@include flexbox();
+		@include justify( space-around );
+		@include flexflow( row nowrap );
+	}
+
+	.site-branding {
+		@include flexbasis(50%);
+	} // End of .site-branding
+
+	.bulogo {
+		padding-bottom: 120px;
+		background-image: url(http://www.belmont.edu/images/homepage_redesign/logo.png);
+		background-position: center 10%;
+		background-repeat: no-repeat;
+		@include flexbasis(25%);
+	}
+
+	.site-title {
+		text-align: center;
+		margin: $vspacing 0;
+
+		a {
+			text-decoration: none;
+			font-size: $h1;
+			color: $light;
+
+			@media only screen and (min-width: $responsive1) {
+				font-size: $h1;
+			}
+		}
+	}
+
+	.site-description {
+		display: none;
+
+		@media only screen and (min-width: $responsive3) {
+			display: inline-block;
+			color: $light;
+			height: 18em;
+			margin: 0;
+			position: absolute;
+		}
+
+		.description-text {
+			display: none;
+
+			@media only screen and (min-width: $responsive3) {
+				display: inline-block;
+				text-transform: uppercase;
+				text-align: justify;
+				margin: 13.5em 0 0;
+				max-width: 234px;
+			}
+
+		} // End of .description-text
+
+	} // End of .site-description
+
+} // End of .site-header

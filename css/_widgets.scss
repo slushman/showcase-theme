@@ -1,0 +1,24 @@
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 $vspacing;
+	padding: 1em;
+
+	/* Make sure select elements fit in widgets */
+	select {
+		max-width: 100%;
+	}
+
+	/* Search widget */
+	.widget_search {
+
+		.search-submit {
+			@include hide();
+		}
+
+		.search-field {
+			max-width: 100%;
+		}
+	}
+}
