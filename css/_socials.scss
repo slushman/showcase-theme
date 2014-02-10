@@ -13,6 +13,7 @@
 			display:  inline-block;
 			position: relative;
 			margin: 0 0.25em;
+			line-height: $menuheight;
 
 			a {
 			    color: transparent;
@@ -24,42 +25,76 @@
 				font-size: $socials;
 			}
 
+			a[href*="bitbucket.com"]:before {
+				//@include icon($fa-var-bitbucket-square); // Square Bitbucket icon
+				@include icon($fa-var-bitbucket); // Bitbucket icon
+			}
 			a[href*="facebook.com"]:before {
-				@include icon($fa-var-facebook-square);
-			}
-			a[href*="twitter.com"]:before {
-				@include icon($fa-var-twitter-square);
-			}
-			a[href*="plus.google.com"]:before {
-				@include icon($fa-var-google-plus-square);
-			}
-			a[href*="pinterest.com"]:before {
-				@include icon($fa-var-pinterest-square);
-			}
-			a[href*="tumblr.com"]:before {
-				@include icon($fa-var-tumblr-square);
-			}
-			a[href*="youtube.com"]:before {
-				@include icon($fa-var-youtube-square);
+				//@include icon($fa-var-facebook-square); // Square Facebook icon
+				@include icon($fa-var-facebook); // Facebook "F" icon
 			}
 			a[href*="flickr.com"]:before {
-				@include icon($fa-var-flickr);
+				@include icon($fa-var-flickr); // Flickr icon
+			}
+			a[href*="github.com"]:before {
+				//@include icon($fa-var-github-square); // Square Github icon
+				@include icon($fa-var-github); // Github silhoette icon
+				//@include icon($fa-var-github-alt); // Github cathead icon
 			}
 			a[href*="instagram.com"]:before {
-				@include icon($fa-var-instagram);
+				@include icon($fa-var-instagram); // Instagram icon
 			}
 			a[href*="linkedin.com"]:before {
-				@include icon($fa-var-linkedin-square);
+				//@include icon($fa-var-linkedin-square); // Square LinkedIn icon
+				@include icon($fa-var-linkedin); // LinkedIn "in" icon
 			}
+			a[href*="pinterest.com"]:before {
+				//@include icon($fa-var-pinterest-square); // Square Pinterest icon
+				@include icon($fa-var-pinterest); // Circular Pinterest icon
+			}
+			a[href*="plus.google.com"]:before {
+				//@include icon($fa-var-google-plus-square); // Square Google+ icon
+				@include icon($fa-var-google-plus); // Google+ "g+" icon
+			}
+			a[href*="tumblr.com"]:before {
+				//@include icon($fa-var-tumblr-square); // Square tumblr icon
+				@include icon($fa-var-tumblr); // Tumblr "t" icon
+			}
+			a[href*="twitter.com"]:before {
+				//@include icon($fa-var-twitter-square); // Square Twitter bird icon
+				@include icon($fa-var-twitter); // Twitter bird icon
+			}
+			a[href*="vimeo.com"]:before {
+				@include icon($fa-var-vimeo-square); // Square Vimeo icon
+			}
+			a[href*="xing.com"]:before {
+				//@include icon($fa-var-xing-square); // Square Xing icon
+				@include icon($fa-var-xing); // Xing "x" icon
+			}
+			a[href*="youtube.com"]:before {
+				//@include icon($fa-var-youtube-square); // Square Youtube icon
+				//@include icon($fa-var-youtube-play); // Youtube play button icon
+				@include icon($fa-var-youtube); // Youtube icon
+			}
+			
 			a[href*="movie"]:before,
 			a[href*="film"]:before {
-				@include icon($fa-var-film);
+				@include icon($fa-var-film); // Film strip icon
+				//@include icon($fa-var-video-camera); // Video camera icon
 			}
 			a[href$=".rss"]:before, 
+			a[href$="rss2"]:before, 
 			a[href$="rss.xml"]:before, 
 			a[href*="/feed/"]:before,
 			a[href*="/rss/"]:before {
-				@include icon($fa-var-rss-square);
+				//@include icon($fa-var-rss-square); // Square RSS icon
+				@include icon($fa-var-rss); // RSS icon
+			}
+
+			a[href*="mailto:"]:before {
+				//@include icon($fa-var-envelope-o); // Open envelope
+				////@include icon($fa-var-envelope); // Solid envelope
+				content: '\0040';
 			}
 		}
 	}

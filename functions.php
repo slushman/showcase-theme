@@ -48,12 +48,16 @@ function showcase_series_setup() {
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'showcase_series_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 
+	/*$bg_defaults['default-color'] 			= '222222';
+	$bg_defaults['default-image'] 			= '';
+	$bg_defaults['wp-head-callback'] 		= '_custom_background_cb';
+	$bg_defaults['admin-head-callback'] 	= '';
+	$bg_defaults['admin-preview-callback'] 	= '';
+
+	// Setup the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'showcase_series_custom_background_args', $bg_defaults ) );
+*/
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 }
@@ -118,6 +122,46 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
+/*function change_custom_background_cb() {
+
+	$page = get_page_by_title ( 'Welcome' );
+
+	if ( has_post_thumbnail( $page->ID ) ) {
+
+		$background = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' );
+
+	} else {
+
+		$background = get_background_image();
+
+	}
+
+    $color = get_background_color();
+ 
+    if ( !$background && !$color ) { return; }
+ 
+    $style = ( $color ? "background-color: #$color;" : '' );
+ 
+    if ( $background ) {
+
+        $image 		= " background-image: url('$background');";
+        $repeat 	= " background-repeat: no-repeat;";
+        $position 	= " background-position: top center;";
+        $attachment = " background-attachment: fixed;";
+        $style 		.= $image . $repeat . $position . $attachment;
+    
+    }
+?>
+<style type="text/css">
+body.custom-background { <?php echo trim( $style ); ?> }
+</style>
+<?php
+}*/
+
+add_theme_support( 'custom-background' );
+
+
+
 /**
  * Social Menus
  */
@@ -144,7 +188,7 @@ add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></div>', 'showcase-series' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">Belmont University</a> - All Rights Reserved<br />Mike Curb College of Entertainment and Music Business</div>', 'showcase-series' ), date( 'Y' ), get_admin_url() );
 
 } // End of careers_credits()
 add_action( 'site_info', 'custom_site_info' );

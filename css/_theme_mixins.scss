@@ -2,3 +2,6 @@
 // --------------------------
 // 
 
+@mixin contentbg () {
+	@include background-opacity( $darkgray, 0.5 );
+}

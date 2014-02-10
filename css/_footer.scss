@@ -2,24 +2,36 @@
 // --------------------------
 
 .site-footer {
-	position: absolute;
+	
 	color: $light;
 	width: 100%;
-	bottom: 0;
+
+	@include contentbg;
+
+	@media all and (min-width: $responsive1) {
+		bottom: 0;
+		position: fixed;
+	}
 
 	a {
 		color: $light;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.footer-wrap {
 		max-width: $finalwidth;
 		margin: auto;
-		padding: 0 1em;
+		padding: 0.5em 1em 0;
 
 		@media all and (min-width: $responsive1) {
 			@include flexbox();
 			@include justify( space-around );
 			@include flexflow( row nowrap );
+			@include alignitems( center );
 		}
 
 		.footer_block {
@@ -35,19 +47,24 @@
 			}
 		 }
 
+		 .site-info {
+		 	@include flexbasis(60%);
+		 }
+
+		.footer_left,
+		.site-credits {
+			@include flexbasis(17.5%);
+		}
+
 		.footer_left {
 
-			.nav-social {
-		
-				.menu-items {
-					margin: 0;
+			.menu-items {
+				margin: 0;
 
-					.menu-item {
+				.menu-item {
 
-						a:before {
-							color: $light;
-						}
-
+					a:before {
+						color: $light;
 					}
 
 				}

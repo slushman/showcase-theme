@@ -8,13 +8,20 @@
 	@include boxsize( border-box );
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0 auto;
 	background-color: $darkgray;
-	/*
-	@include bgimage( images/squairy_light.png, images/squairy_light_@2X.png ); 
-	*/
+	font-family: open_sanslight;
+}
 
+body.custom-background {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
 }
 
 /* Alignment */
