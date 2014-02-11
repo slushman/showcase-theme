@@ -4,7 +4,7 @@
 .site-content {
 	position: relative;
 	max-width: $contentwidth;
-	margin: 0 auto;
+	margin: 0 auto $vspacing*6;
 	color: $light;
 }
 

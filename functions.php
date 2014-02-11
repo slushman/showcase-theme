@@ -188,7 +188,7 @@ add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">Belmont University</a> - All Rights Reserved<br />Mike Curb College of Entertainment and Music Business</div>', 'showcase-series' ), date( 'Y' ), get_admin_url() );
+	printf( __( '<small class="copyright">All content &copy %1$s <a href="%2$s" title="Login">Belmont University</a> - All Rights Reserved<br />Mike Curb College of Entertainment and Music Business</small>', 'showcase-series' ), date( 'Y' ), get_admin_url() );
 
 } // End of careers_credits()
 add_action( 'site_info', 'custom_site_info' );
