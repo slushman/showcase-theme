@@ -7,10 +7,14 @@
 
 .comment-list {
 	margin: 0;
+	list-style: none;
 
 	.comment {
-		margin: $vspacing 0 0;
-		padding: 1em;
+		margin: 1em 0 0;
+
+		@media screen and (min-width:$responsive1) {
+			padding: 1em;
+		}
 
 		.comment-content {
 
@@ -29,12 +33,17 @@
 		}
 
 		.children {
-			margin: 0;
+			margin-left: 1em;
+			list-style: none;
+
+			@media screen and (min-width:$responsive1) {
+				margin-left: $vspacing;
+			}
 		}
 	}
 
 	.even {
-		background-color: $lightgray;
+
 	}
 
 	.vcard {

@@ -6,6 +6,15 @@
  * Slushman Mixins
  */
 
+@mixin abscenter( $width:50% ) {
+    width: $width;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate( -50%, -50% );
+}
+
 @mixin angled( $angle ) {
     transform: rotate( $angle );
     -webkit-transform: rotate($angle);
@@ -29,6 +38,11 @@
     appearance: $type;
     -moz-appearance: $type;
     -webkit-appearance: $type;
+}
+
+@mixin background-opacity( $color, $opacity:0.3 ) {
+    background: $color; /* The Fallback */
+    background: rgba( $color, $opacity );
 }
 
 @mixin blur( $blur ) {
@@ -64,29 +78,27 @@
 /**
  * Responsive width
  *
+ * Column widths assume box-sizing: border-box on all items
  * This is based on a 12 column grid
- * Margin is constant: 1.666%
  *
  * @param   $quantity   How many total columns will there be
  * @param   $span       How many of grids should this span, default: 1
+ * @param   $pad        The percentage for padding between columns, default: 1.666%
  */
-@mixin column( $quantity, $span: 1, $margin: 1.6666666666667 ) {
+@mixin column( $quantity, $span: 1, $pad: 1.6666666666667 ) {
 
-    $margins: $quantity * ( $margin * 2 );
-    $boxwidth: ( 100 - $margins ) / $quantity;
+    $boxwidth: ( 100 / $quantity );
     $width: percentage( $boxwidth / 100 );
+    $padperc: percentage( $pad / 100 );
 
     @if ( $span > 1 ) {
-        // $width: percentage( ( ( $boxwidth * $span ) - ( $margin * $span ) ) / 100 );
-        $width: percentage( ( ( ( 100 / 12 ) * $span ) - ( $margin * 2 ) ) / 100 );
+        $width: percentage( $span / $quantity );
     }
-
-    $marginperc: percentage( $margin / 100 );
 
     width: $width;
     float: left;
-    margin-left: $marginperc;
-    margin-right: $marginperc;
+    padding-left: $padperc;
+    padding-right: $padperc;
 }
 
 @mixin grayscale( $perc: 100% ) {
@@ -171,11 +183,6 @@
             background-image: url( #{$retinapic} );
         }
     }
-}
-
-@mixin background-opacity( $color, $opacity:0.3 ) {
-    background: $color; /* The Fallback */
-    background: rgba( $color, $opacity );
 }
 
 @mixin radius( $radius ) {

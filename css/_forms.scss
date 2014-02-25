@@ -26,8 +26,7 @@ input[type="submit"] {
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	font-size: 12px;
-	font-size: 1.2em;
+	font-size: 1em;
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -84,6 +83,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	padding: .5em;
+	margin-bottom: $vspacing;
 
 	@include radius( 3px );
 }
@@ -106,4 +106,13 @@ textarea {
 .form_title {
 	font-size: 2.5em;
 	margin: 1em 0;
+}
+
+fieldset {
+	padding: $vspacing;
+}
+
+label,
+.label {
+	display: block;
 }

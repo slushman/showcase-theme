@@ -22,20 +22,34 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="logowrap">
-			<div class="bulogo"></div>
+		<div class="logocontainer">
+			<div class="logowrap">
+				<div class="bulogo"></div>
+			</div>
 		</div>
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
+
+		<?php /*
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'showcase-series' ); ?></h1>
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'showcase-series' ); ?></a>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu nav-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+		*/ ?>
+
+		
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'showcase-series' ); ?></a>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu nav-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+		
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -12,8 +12,11 @@
 		.menu-item {
 			display:  inline-block;
 			position: relative;
-			margin: 0 0.25em;
-			line-height: $menuheight;
+			padding: 0.5em;
+
+			@media screen and (min-width: $responsive1) {
+				padding: 0.25em;
+			}
 
 			a {
 			    color: transparent;
@@ -22,7 +25,11 @@
 			}
 
 			a:before {
-				font-size: $socials;
+				font-size: $h1;
+
+				@media screen and (min-width: $responsive3) {
+					font-size: $h3;
+				}
 			}
 
 			a[href*="bitbucket.com"]:before {

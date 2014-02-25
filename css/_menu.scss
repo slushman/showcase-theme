@@ -6,17 +6,22 @@
 ----------------------------------------------- */
 
 .main-navigation {
-	width: 100%;
+	@include column( 1, 1, 0 );
 
-	@include flexbasis(25%);
-	
-	// Small menu
+	@media screen and (max-width: $responsive3) {
+		@include contentbg;
+	}
+
+	@media screen and (min-width: $responsive3) {
+		@include column( 5, 1 );
+		width: 17%; // 2/24 @ 3 pm
+	}
+
+	/* // Small menu
 	.menu-toggle,
 	&.toggled .nav-menu {
 		display: block;
 		cursor: pointer;
-		font-size: 2em;
-		@include contentbg;
 		
 		li {
 			font-size: 1em;
@@ -25,63 +30,72 @@
 		@media screen and (min-width: $responsive1) {
 			display: none;
 		}
-	}
+	} */
 }
 
 .menu-default-container,
 .menu-short-container,
-.menu-testing-menu-container {
-	font-size: 1.2em;
-	text-align: center;
-
-
-	@media screen and (min-width: $responsive1) {
-		display: inline-block;
-		float: right;
-		text-align: right;
-		max-width: 50%;
-
-		@include contentbg;	
-	}
-
-}
+.menu-testing-menu-container {}
 
 	// first level
 	.nav-menu {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		display: none;
-
+		//display: none;
 
 		@media screen and (min-width: $responsive1) {
-			display: inherit;
+			//display: inherit;
+			text-align: center;
 		}
+
+		@media screen and (min-width: $responsive3) {
+			//display: inline-block;
+			@include contentbg;
+		}
+	}
 
 		.menu-item {
 			position: relative;
+			padding: 0.5em;
+
+			@media screen and (min-width: $responsive1) and (max-width: $responsive3){
+				text-align: center;
+				display: inline-block;
+			}
+
+			@media screen and (min-width: $responsive3) {
+				padding: 0;
+				text-align: right;
+				//@include contentbg;
+			}
 
 			> a {
 				text-decoration: none;
 				color: $light;
 				text-transform: uppercase;
 				font-family: open_sanslight;
-				font-size: $h5;
+				//font-size: $h3;
+				font-size: $h4;
 
 				@media screen and (min-width: $responsive1) {
-					padding: 0 1em;
+					padding: 0 5%;
+					//font-size: $h4;
 				}
 			}
 
 			// link hover
 			&:hover {
-				> ul { display: block; }
-			}
+				> ul { 
+					display: block;
 
-			&:first-child a:before {
+					@media screen and (min-width: $responsive1) {
+						width: 225%;
+					}
 
-				@media screen and (min-width: $responsive1) {
-					content: none;
+					@media screen and (min-width: $responsive3) {
+						width: inherit;
+					}
 				}
 			}
 
@@ -101,33 +115,47 @@
 		// second level
 		.sub-menu  {
 			list-style: none;
-			margin: 0;
-			
+			background: none;
+
+			@media only screen and (max-width: $responsive1) {
+				margin: 0.5em 0 0;
+			}
+
 			@media only screen and (min-width: $responsive1) {
-				float: left;
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 				display: none;
 				position: absolute;
-					top:0 ;
-					left: -18.5em;
+				top: 52px;
+				left: -50%;
 				z-index: 99999;
-				
-				@include contentbg;
+				@include contentbg(0.9);
+			}
+			
+			@media only screen and (min-width: $responsive3) {
+				top: 0;
+				left: -25em;
+				padding: 0.5em;
 			}
 
 			.menu-item {
+				display: block;
+				background: none;
 
 				a {
 					width: 100%;
+					padding: 0;
 
 					&:before {
 						content: none;
 					}
+				}
 
-					@media only screen and (min-width: $responsive1) {
-						width: 200px;
-						line-height: 1.5em;
-					}
+				@media screen and (max-width: $responsive1) {
+					padding-left: 0;
+				}
+
+				@media screen and (min-width: $responsive1) {
+					width: 100%;
 				}
 			}
 
@@ -135,16 +163,12 @@
 			.sub-menu {
 				left: 100%;
 				top: 0;
+				background: none;
 			}
-			
 		}
 
-		li:hover > ul {
-			display: block;
-		}
-	}
-
-.menu-toggle {
+/* .menu-toggle {
 	text-align: center;
 	color: $light;
-}
+	@include contentbg;
+} */

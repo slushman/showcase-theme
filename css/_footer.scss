@@ -2,10 +2,9 @@
 // --------------------------
 
 .site-footer {
-	
-	color: $light;
 	width: 100%;
-
+	padding: 0.25em;
+	
 	@include contentbg;
 
 	@media all and (min-width: $responsive1) {
@@ -25,44 +24,23 @@
 	.footer-wrap {
 		max-width: $finalwidth;
 		margin: auto;
-		padding: 0.5em 1em 0;
-
-		@media all and (min-width: $responsive1) {
-			@include flexbox();
-			@include justify( space-around );
-			@include flexflow( row nowrap );
-			@include alignitems( center );
-		}
-
-		.footer_block {
-			display: block;
-			width: 100%;
-			margin-bottom: 1.5em;
-			line-height: 2em;
-			text-align: center;
-
-			@media all and (min-width: $responsive1) {
-				width: 33%;
-				margin-bottom: 0;
-			}
-		 }
-
-		 .site-info {
-		 	line-height: $vspacing;
-		 	@include flexbasis(60%);
-		 }
-
-		.footer_left,
-		.site-credits {
-			@include flexbasis(17.5%);
-		}
+	}
 
 		.footer_left {
 
-			.menu-items {
+			@media screen and (min-width: $responsive25) {
+			 	@include column( 6, 2, 0 );
+		 	}
+
+			@media screen and (min-width: $responsive3) {
+			 	@include column( 5, 1, 0 );
+		 	}
+
+		 	.menu-items {
 				margin: 0;
 
 				.menu-item {
+					background: transparent;
 
 					a:before {
 						color: $light;
@@ -70,6 +48,53 @@
 
 				}
 			}
+
 		}
-	}
+
+		.site-info {
+			line-height: $vspacing;
+
+			@media screen and (min-width: $responsive25) {
+			 	@include column( 6, 3, 0 );
+		 	}
+
+		 	@media screen and (min-width: $responsive3) {
+			 	@include column( 5, 3, 0 );
+		 	}
+		}
+
+			.copyright {
+				line-height: 1em;
+			}
+
+		.site-credits {
+
+			@media screen and (min-width: $responsive25) {
+			 	@include column( 6, 1 );
+		 	}
+
+		 	@media screen and (min-width: $responsive3) {
+			 	@include column( 5, 1, 0 );
+		 	}
+
+		 	a {
+		 		line-height: 2.15em;
+		 	}
+		}
+
+		.footer_block {
+			display: block;
+			text-align: center;
+		}
+
+		/* .footer_block {
+			display: block;
+			margin-bottom: 1.5em;
+			line-height: 2em;
+			text-align: center;
+
+			@media all and (min-width: $responsive2) {
+				margin-bottom: 0;
+			}
+		 } */
 }

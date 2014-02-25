@@ -19,9 +19,16 @@ body {
 }
 
 body.custom-background {
-	background-size: cover;
-	background-position: top center;
-	background-repeat: no-repeat;
+
+	@media screen and (max-width: $responsive1) {
+		background-image: none !important;
+	}
+
+	@media screen and (min-width: $responsive1) {
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
+	}
 }
 
 /* Alignment */

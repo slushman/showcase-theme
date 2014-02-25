@@ -9,7 +9,23 @@ $header-font: $base-font; // you can refer to other variables
 /* Sizes */
 $fontsize: 16px;
 $lineheight: 24px;
-$menuheight: 59px;
+
+/* Typography */
+
+$giga: $fontsize*6;
+$mega: $fontsize*5;
+$kilo: $fontsize*4;
+
+$h1: $fontsize*3;
+$h2: $fontsize*2.5;
+$h3: $fontsize*2;
+$h4: $fontsize*1.5;
+$h5: $fontsize;
+$h6: $fontsize*0.875;
+
+$milli: $fontsize*0.75;
+$micro: $fontsize*0.625;
+
 $socials: 30px;
 $tgu_size: 3em;
 
@@ -21,37 +37,39 @@ $contentwidth: 50em;
 */
 $layout: null !default;
 $vspacing: 1.5em;
+$logospacing: 120px;
+$logospacing2: 160px;
 
-/* Typography */
-$h1: 6rem;
-$h2: 5rem;
-$h3: 4rem;
-$h4: 3rem;
-$h5: 2rem;
-$h6: 1rem;
-$h7: 0.85rem;
+
 
 /* Breakpoints */
+$responsive075: 515px;
 $responsive1: 650px;
-$responsive15: 700px;
-$responsive175: 750px;
-$responsive2: 840px;
+$responsive2: 750px;
+$responsive25: 800px;
 $responsive3: 965px;
-$responsive4: 1065px;
+$responsive4: 1150px;
 $responsive5: 1200px;
 $responsive6: 1500px;
-$responsive7: 1850px;
+
 
 /* Colors */
 $light: #ffffff;
+$lightgray: #d8d8d8;
+$darkgray: #222222;
+
+
 
 $accent: red;
-$darkgray: #222222;
+
 $medgray: #24272f;
-$lightgray: #a9a8a9;
+
 $bured: #b2151c;
 $darkred: #cd3f35;
 $darkteal: #475761;
 
 /* Backgrounds */
 $sitebg: "images/rockshowcase.jpg";
+$bulogo: "http://www.belmont.edu/images/homepage_redesign/logo.png";
+$logo: "images/ShowcaseSeriesLogo.png";
+$longlogo: "images/ShowcaseSeriesLongLogo.png";

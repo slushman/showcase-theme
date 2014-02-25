@@ -38,7 +38,7 @@ function showcase_series_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'showcase_series_custom_header_setup' );
 
-if ( ! function_exists( 'showcase_series_header_style' ) ) :
+if ( ! function_exists( 'showcase_series_header_style' ) ) :*/ ?>
 /**
  * Styles the header image and text displayed on the blog
  *

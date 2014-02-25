@@ -6,82 +6,102 @@
 	max-width: $finalwidth;
 	margin: 0 auto;
 	
-	@media all and (min-width: $responsive1) {
-		@include flexbox();
-		@include justify( space-around );
-		@include flexflow( row nowrap );
+	.logocontainer {
+		padding-bottom: $logospacing;
+		height: $logospacing;
+		min-width: 125px;
+		@include column( 1, 1, 0 );
+
+		@media only screen and ( min-width: $responsive075 ) {
+			height: $logospacing2;
+			padding-bottom: $logospacing2;
+
+			@include column( 4, 1, 0 );
+		}
+
+		@media only screen and ( min-width: $responsive3 ) {
+			@include column( 5, 1 );
+			width: 17%;
+			margin-right: 3%;
+		}
 	}
+
+		.logowrap {
+			@include contentbg;
+		}
+
+			.bulogo {
+				padding-bottom: $logospacing;
+
+				@include imagebg( $bulogo );
+
+				@media only screen and (min-width:$responsive1 ) {
+					padding-bottom: $logospacing2;
+				}
+			}
+
+
+
 
 	.site-branding {
-		@include flexbasis(50%);
+		@include contentbg;
+		@include column( 1, 1, 0 );
+
+		@media only screen and (min-width: $responsive075 ) {
+			@include column( 4, 3, 0 );
+			overflow: hidden;
+		}
+
+		@media only screen and (max-width:$responsive1 ) {
+			padding-bottom: $vspacing;
+		}
+
+		@media only screen and (min-width: $responsive3 ) {
+			@include column( 5, 3 );
+			width: 34%;
+			margin: 0 13%;
+			padding: 0;
+		}
 	} // End of .site-branding
 
-	.logowrap {
-		padding-bottom: 120px;
-		width: 9em;
-		height: 9em;
-		margin:0 auto;
-		@include contentbg;
+		/* LONG LOGO
 
-		@media only screen and (min-width:$responsive1 ){
-			@include flexbasis(25%);
-			max-width: 9em;
-		}
-	}
+		.site-title {
+			@include imagebg( $logo, "", no-repeat, top, center, contain );
+			min-height: 117px;
 
-	.bulogo {
-		padding-bottom: 9em;
-		background-image: url(http://www.belmont.edu/images/homepage_redesign/logo.png);
-		background-position: center 10%;
-		background-repeat: no-repeat;
-	}
-
-	.site-title {
-		text-align: center;
-		margin: 0 auto;
-		//word-spacing: $finalwidth;
-		padding: 0.5em;
-		//width: 10em;
-
-		@include contentbg;
-
-		a {
-			text-decoration: none;
-			font-size: $h4 !important;
-			color: $light;
-			text-transform: uppercase;
-			font-family: open_sanslight;
-
-			@media only screen and (min-width: $responsive1) {
-				font-size: $h1*1.4;
-			}
-		}
-	}
-
-	.site-description {
-		display: none;
-
-		@media only screen and (min-width: $responsive3) {
-			display: inline-block;
-			color: $light;
-			height: 18em;
-			margin: 0;
-			position: absolute;
-		}
-
-		.description-text {
-			display: none;
-
-			@media only screen and (min-width: $responsive3) {
-				display: inline-block;
-				text-transform: uppercase;
-				text-align: justify;
-				margin: 13.5em 0 0;
-				max-width: 234px;
+			@media screen and (min-width: $responsive1) {
+				height: $logospacing2;
+				@include imagebg( $longlogo, "", no-repeat, center, center, contain ) ;
 			}
 
-		} // End of .description-text
+			a {
+				@include hide();
+			}
+		}
 
-	} // End of .site-description
+		*/
+	
+		.site-title {
+			@include imagebg( $logo, "", no-repeat, top, center, contain );
+			min-height: 117px;
+
+			@media screen and (min-width: $responsive1) {
+				height: $logospacing2;
+				@include imagebg( $logo, "", no-repeat, center, center, contain ) ;
+			}
+
+			@media only screen and (min-width: $responsive3 ) {
+				height: $logospacing + 10px;
+			}
+
+			a {
+				@include hide();
+			}
+		}
+
+		.site-description {
+			@include hide();
+		} // End of .site-description
 
 } // End of .site-header
