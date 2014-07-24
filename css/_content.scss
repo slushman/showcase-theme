@@ -1,14 +1,21 @@
 /* =Content
 ----------------------------------------------- */
 
+.home .site-content {
+	@include hide();
+}
+
 .site-content {
 	width: 100%;
 	color: $light;
+
+	@media only screen and (min-width: $responsive2) {
+		position: absolute;
+		bottom: 62px;
+	}
 	
 	@media only screen and (min-width: $responsive25) {
-		position: absolute;
-		bottom: 0;
-		bottom: 64px;
+		bottom: 40px;
 	}
 }
 
@@ -16,7 +23,7 @@
 		width: 100%;
 		@include contentbg;
 
-		@media only screen and (min-width: $responsive1) {
+		@media only screen and (min-width: $responsive25) {
 			height: auto;
 			margin: 0 auto;
 			overflow-x: hidden;
@@ -41,15 +48,6 @@
 
 			p {
 				margin: 0 0 $lineheight;
-
-				@media only screen and (min-width: $responsive1) {
-					.read_more {
-						position: absolute;
-						bottom: 1.25em;
-						right: 1.25em;
-						color: $light;
-					}
-				}
 			}
 		}
 
@@ -106,17 +104,81 @@
 /**
  * Pages
  */
-.page {
-
-	.entry-header {
-		margin-bottom: $vspacing;
-	}
-
-}
-
 article.page {
 	padding: 1em;
-}
+	position: relative;
+
+	.entry-header {
+		margin-bottom: 0;
+	}
+
+	#show_hide_link,
+	[for="show_hide_link"] {
+		visibility: hidden;
+		max-height: 0;
+	}
+
+	@media screen and (min-width: $responsive2) {
+
+		section.entry-content {
+			max-height: 0;
+			margin: 0;
+			visibility: hidden;
+			transition: all 0.5s ease;
+		}
+
+		input[type=checkbox]#show_hide_link {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			width: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+		}
+
+		[for="show_hide_link"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0.6em 1em;
+			font-size: 2em;
+			visibility: visible;
+			max-height: 3em;
+			transition: all 0.5s ease;
+
+			&:hover {
+				background: rgba(0,0,0,.5);
+				color: rgb(255,255,255);
+				transition: background 0.75s ease;
+			}
+
+			&:after {
+				content: "+";
+			}
+
+		}
+
+		input[type=checkbox]:checked {
+
+			~ section.entry-content {
+				visibility: visible;
+				max-height: 24em;
+				transition: all 0.5s ease;
+			}
+
+			~ [for="show_hide_link"] {
+				&:after {
+					content: "-";
+				}
+			}
+
+		} // End of input:checked
+
+	} // End of @media $responsive25
+
+} // End of article.page
 
 .single .byline,
 .group-blog .byline {
@@ -135,25 +197,6 @@ article.page {
 
 
 /**
- * Mobile Content Link
- */
-
-.mobile-content {
-	padding: 0.5em;
-
-	@media screen and (min-width: $responsive1) {
-		display: none;	
-	}
-}
-
-	.mobile-content-link {
-		text-decoration: none;
-		text-transform: uppercase;
-		font-family: open_sanslight;
-		font-size: $h4;
-	}
-
-/**
  * Hidden items
  */
 
@@ -163,3 +206,41 @@ article.page {
 .paging-navigation {
 	@include hide();
 }
+
+
+
+/**
+ * Media Page
+ */
+body.page-template-page_media-php{
+	background-color: #222;
+	background-position: top center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url(images/Archive.jpg);
+
+	.site-content {
+		position: relative;
+		bottom: inherit;
+	}
+
+	.content-area {
+		max-height: inherit;
+	}
+
+	section.entry-content {
+		max-height: inherit;
+		visibility: visible;
+	}
+
+	footer.site-footer {
+		background: rgba(34,34,34,0.9);
+	}
+
+	.tcycle,
+	.tcycle_single,
+	.sbgs_slide {
+		@include hide();
+	}
+
+} // End of media page

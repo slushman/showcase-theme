@@ -3,13 +3,17 @@
 
 .site-footer {
 	width: 100%;
-	padding: 0.25em;
+	padding: 0 0.5em 0.5em;
 	
 	@include contentbg;
 
 	@media all and (min-width: $responsive1) {
 		bottom: 0;
 		position: fixed;
+	}
+
+	@media all and (min-width: $responsive25) {
+		padding: 0 0.5em;
 	}
 
 	a {
@@ -26,75 +30,25 @@
 		margin: auto;
 	}
 
-		.footer_left {
-
-			@media screen and (min-width: $responsive25) {
-			 	@include column( 6, 2, 0 );
-		 	}
-
-			@media screen and (min-width: $responsive3) {
-			 	@include column( 5, 1, 0 );
-		 	}
-
-		 	.menu-items {
-				margin: 0;
-
-				.menu-item {
-					background: transparent;
-
-					a:before {
-						color: $light;
-					}
-
-				}
-			}
-
-		}
-
 		.site-info {
-			line-height: $vspacing;
-
-			@media screen and (min-width: $responsive25) {
-			 	@include column( 6, 3, 0 );
-		 	}
-
-		 	@media screen and (min-width: $responsive3) {
-			 	@include column( 5, 3, 0 );
-		 	}
+			line-height: 2.5em;
 		}
 
 			.copyright {
 				line-height: 1em;
 			}
 
-		.site-credits {
-
-			@media screen and (min-width: $responsive25) {
-			 	@include column( 6, 1 );
-		 	}
-
-		 	@media screen and (min-width: $responsive3) {
-			 	@include column( 5, 1, 0 );
-		 	}
-
-		 	a {
-		 		line-height: 2.15em;
-		 	}
-		}
-
 		.footer_block {
 			display: block;
 			text-align: center;
 		}
 
-		/* .footer_block {
-			display: block;
-			margin-bottom: 1.5em;
-			line-height: 2em;
-			text-align: center;
+	.footer_rights {
+		display: block;
 
-			@media all and (min-width: $responsive2) {
-				margin-bottom: 0;
-			}
-		 } */
+		@media all and (min-width: $responsive25) {
+			display: inherit;
+		}
+	}
+
 }

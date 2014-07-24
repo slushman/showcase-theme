@@ -1,0 +1,19 @@
+.sbgs_slide.sbgs_featured {
+	position: relative;
+	margin-bottom: 1.5em;
+	padding-bottom: 60%;
+}
+
+@media only screen and (min-width: $responsive2) {
+	.sbgs_slide.sbgs_featured {
+		@include hide();
+	}
+}
+
+@media only screen and (max-width: $responsive2) {
+	.tcycle_single,
+	.tcycle {
+		@include hide();
+	}
+}
+

@@ -1,20 +1,16 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content on the media page
  *
  * @package CEMB Showcase Series
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'media_page' ); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
-	<input type="checkbox" id="show_hide_link" role="button">
-   	<label for="show_hide_link" onclick=""></label>
 	<section class="entry-content"><?php
-
-		include_once( 'inc/sbgs.php' );
 
 		the_content();
 		wp_link_pages( array(

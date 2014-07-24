@@ -13,8 +13,10 @@
 	}
 
 	@media screen and (min-width: $responsive3) {
-		@include column( 5, 1 );
-		width: 17%; // 2/24 @ 3 pm
+/* 		@include column( 5, 1 );
+		width: 17%; // 2/24 @ 3 pm */
+		@include topLeftCorner();
+		width: 175px;
 	}
 
 	/* // Small menu
@@ -66,7 +68,7 @@
 
 			@media screen and (min-width: $responsive3) {
 				padding: 0;
-				text-align: right;
+				text-align: left;
 				//@include contentbg;
 			}
 
@@ -93,9 +95,9 @@
 						width: 225%;
 					}
 
-					@media screen and (min-width: $responsive3) {
+					/* @media screen and (min-width: $responsive3) {
 						width: inherit;
-					}
+					} */
 				}
 			}
 
@@ -128,12 +130,13 @@
 				top: 52px;
 				left: -50%;
 				z-index: 99999;
-				@include contentbg(0.9);
+				@include contentbg(0.75);
 			}
 			
 			@media only screen and (min-width: $responsive3) {
+				margin: 0;
 				top: 0;
-				left: -25em;
+				left: 100%;
 				padding: 0.5em;
 			}
 

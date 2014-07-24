@@ -188,14 +188,47 @@ add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<small class="copyright">All content &copy %1$s <a href="%2$s" title="Login">Belmont University</a> - All Rights Reserved<br />Mike Curb College of Entertainment and Music Business</small>', 'showcase-series' ), date( 'Y' ), get_admin_url() );
+	printf( __( '<small class="copyright">All content &copy %1$s <a href="%2$s" title="Login">Belmont University</a> <span class="footer_rights">All Rights Reserved Mike Curb College of Entertainment and Music Business</span></small>', 'showcase-series' ), date( 'Y' ), get_admin_url() );
 
 } // End of careers_credits()
 add_action( 'site_info', 'custom_site_info' );
 
-function slushman_credits() {
 
-	printf( __( '<a href="http://%1$s.com" class="%1$s" rel="designer" >%2$s</a>', 'showcase-series' ), 'slushman', 'Slushman' );
 
-} // End of careers_credits()
-add_action( 'site_credits', 'slushman_credits' );
+/**
+ * Customize login page
+ */
+function curbcollege_login() { ?>
+    <style type="text/css">
+    	body.login {
+    		background: #383737;
+    	}
+    	body.login div#login {
+    		padding-top: 4%;
+    	}
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/vertical_logo.png);
+            background-size: 200px 200px;
+            height: 200px;
+            width: 200px;
+            padding-bottom: 30px;
+        }
+        body.login .button-primary {
+        	background: #c9262d;
+        	border-color: #b0151c;
+        }
+        body.login .button-primary:hover {
+        	background: #b0151c;
+        	border-color: #c9262d;
+        }
+        .login #nav a, 
+        .login #backtoblog a {
+        	color: #ffffff;
+        }
+        .login #nav a:hover, 
+        .login #backtoblog a:hover {
+        	color: #b0151c;
+        }
+    </style>
+<?php } // End of curbcollege_login()
+add_action( 'login_enqueue_scripts', 'curbcollege_login' );

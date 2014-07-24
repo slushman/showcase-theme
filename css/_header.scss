@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 .site-header {
-	margin-bottom: $vspacing*2 !important;
+	margin-bottom: $vspacing !important;
 	max-width: $finalwidth;
 	margin: 0 auto;
 	
@@ -11,18 +11,19 @@
 		height: $logospacing;
 		min-width: 125px;
 		@include column( 1, 1, 0 );
+		display: table-header-group;
 
 		@media only screen and ( min-width: $responsive075 ) {
 			height: $logospacing2;
 			padding-bottom: $logospacing2;
+			width: 25%;
 
-			@include column( 4, 1, 0 );
+			@include topRightCorner();
 		}
 
 		@media only screen and ( min-width: $responsive3 ) {
-			@include column( 5, 1 );
-			width: 17%;
-			margin-right: 3%;
+			width: $logospacing2
+			;
 		}
 	}
 
@@ -34,6 +35,10 @@
 				padding-bottom: $logospacing;
 
 				@include imagebg( $bulogo );
+
+				@media only screen and ( min-width: $responsive075 ) {
+					padding-bottom: 141px;
+				}
 
 				@media only screen and (min-width:$responsive1 ) {
 					padding-bottom: $logospacing2;
@@ -57,42 +62,28 @@
 		}
 
 		@media only screen and (min-width: $responsive3 ) {
-			@include column( 5, 3 );
-			width: 34%;
+/* 			@include column( 5, 3 );
+			width: 30%;
 			margin: 0 13%;
+			padding: 0; */
+			float: none;
+			margin: 0 auto;
 			padding: 0;
+			width: 550px;
 		}
 	} // End of .site-branding
 
-		/* LONG LOGO
-
 		.site-title {
 			@include imagebg( $logo, "", no-repeat, top, center, contain );
 			min-height: 117px;
 
 			@media screen and (min-width: $responsive1) {
 				height: $logospacing2;
-				@include imagebg( $longlogo, "", no-repeat, center, center, contain ) ;
+				@include imagebg( $shortlogo, "", no-repeat, center, center, contain ) ;
 			}
 
-			a {
-				@include hide();
-			}
-		}
-
-		*/
-	
-		.site-title {
-			@include imagebg( $logo, "", no-repeat, top, center, contain );
-			min-height: 117px;
-
-			@media screen and (min-width: $responsive1) {
-				height: $logospacing2;
-				@include imagebg( $logo, "", no-repeat, center, center, contain ) ;
-			}
-
-			@media only screen and (min-width: $responsive3 ) {
-				height: $logospacing + 10px;
+			@media screen and (min-width: $responsive3) {
+				height: $logospacing;
 			}
 
 			a {
